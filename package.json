@@ -1,0 +1,31 @@
+{
+  "name": "to-do-list-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "watch": "webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MouhaDiouf/to-do-list-js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MouhaDiouf/to-do-list-js/issues"
+  },
+  "homepage": "https://github.com/MouhaDiouf/to-do-list-js#readme",
+  "devDependencies": {
+    "webpack": "^4.41.3",
+    "webpack-cli": "^3.3.10"
+  },
+  "dependencies": {
+    "bootstrap": "^4.4.1",
+    "jquery": "^3.4.1",
+    "popper.js": "^1.16.0"
+  }
+}
