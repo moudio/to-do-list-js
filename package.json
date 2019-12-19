@@ -2,11 +2,26 @@
   "name": "to-do-list-js",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "webpack.config.js",
+  "dependencies": {
+    "bootstrap": "^4.4.1",
+    "jquery": "^3.4.1",
+    "popper.js": "^1.16.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.7.3",
+    "css-loader": "^3.4.0",
+    "node-sass": "^4.13.0",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.0.2",
+    "webpack": "^4.41.4",
+    "webpack-cli": "^3.3.10"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "watch": "webpack --watch"
+    "watch": "webpack --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -18,14 +33,5 @@
   "bugs": {
     "url": "https://github.com/MouhaDiouf/to-do-list-js/issues"
   },
-  "homepage": "https://github.com/MouhaDiouf/to-do-list-js#readme",
-  "devDependencies": {
-    "webpack": "^4.41.3",
-    "webpack-cli": "^3.3.10"
-  },
-  "dependencies": {
-    "bootstrap": "^4.4.1",
-    "jquery": "^3.4.1",
-    "popper.js": "^1.16.0"
-  }
+  "homepage": "https://github.com/MouhaDiouf/to-do-list-js#readme"
 }
