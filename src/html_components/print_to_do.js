@@ -1,6 +1,8 @@
+import createTask from '../factories/newtask';
 export default function printToDoForm() {
   const title = document.createElement('h1');
-  title.textContent = 'To Do List';
+  title.textContent = 'Add A New Task';
+  title.classList.add('text-center');
     const body = document.querySelector('body'); 
 
     const appContainer = document.createElement('div')
@@ -38,5 +40,8 @@ export default function printToDoForm() {
     `
     body.appendChild(title);
     body.appendChild(appContainer);
+    document.querySelector('form').addEventListener('submit', createTask );
 
 }
+
+

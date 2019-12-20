@@ -1,3 +1,5 @@
+import addEventToNav from '../events/add_nav_events';
+
 export default function printNav() { 
 const body = document.querySelector('body');
 const nav = document.createElement('nav'); 
@@ -10,30 +12,31 @@ nav.innerHTML = `<nav class="navbar navbar-expand-lg navbar-light bg-light">
 
 <div class="collapse navbar-collapse" id="navbarSupportedContent">
   <ul class="navbar-nav mr-auto">
-    <li class="nav-item active">
-      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+    <li class="nav-item ">
+      <a class="nav-link" href="#" >Home</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Link</a>
+      <a class="nav-link" href="#">New Task</a>
     </li>
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Dropdown
+        Projects
       </a>
+
       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <a class="dropdown-item" href="#">Action</a>
-        <a class="dropdown-item" href="#">Another action</a>
+        <a class="dropdown-item" href="#">New Project</a>
+        <a class="dropdown-item" href="#">All Your Projects </a>
         <div class="dropdown-divider"></div>
         <a class="dropdown-item" href="#">Something else here</a>
       </div>
     </li>
-    <li class="nav-item">
-      <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-    </li>
+  
   </ul>
 </div>
 </nav>`
 
 body.appendChild(nav);
+addEventToNav();
+
 
 }
