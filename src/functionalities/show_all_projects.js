@@ -1,3 +1,5 @@
+import { addEventToProjectButtons } from "../events/add_event_to_project";
+
 export default function showAllProjects() {
     const appContainer = document.querySelector('.app');
 if(!localStorage.getItem('projects')){
@@ -11,13 +13,13 @@ title.classList.add('text-center')
 for(let project of projects){
     const projectDiv = document.createElement('div');
     projectDiv.classList.add('project');
-    const projectname = document.createElement('p');
+    const projectName = document.createElement('p');
     const viewProjectButton = document.createElement('button');
     viewProjectButton.textContent = "View Project"
-    viewProjectButton.classList.add('btn', 'btn-warning');
+    viewProjectButton.classList.add('btn', 'btn-warning', 'view-project');
  
-    projectname.innerHTML = project.projectName;
-    projectDiv.appendChild(projectname);
+    projectName.innerHTML = project.name;
+    projectDiv.appendChild(projectName);
     projectDiv.appendChild(viewProjectButton);
     projectDiv.classList.add('project')
     
@@ -26,5 +28,7 @@ for(let project of projects){
 }
 
 }
+
+addEventToProjectButtons()
 
 }

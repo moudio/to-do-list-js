@@ -1,5 +1,6 @@
 import newProjectFactory from '../factories/factory_project';
 import alert from '../html_components/alert'
+import showProject from './show_one_project';
 
 export default function createProject(e) {
     e.preventDefault();
@@ -16,7 +17,8 @@ export default function createProject(e) {
     projects.push(newProject)
     localStorage.setItem('projects', JSON.stringify(projects));
     alert('Project Created Sucessfully');
+    showProject(projectName.value);
     projectName.value = '';
-
+;
 
 }

@@ -1,6 +1,6 @@
 import printToDo from "../html_components/print_to_do";
 import showAllTasks from "../functionalities/show_all_tasks";
-import showProjectForm from "../functionalities/show_project_form";
+import showProjectForm from "../functionalities/create_project_form";
 import showAllProjects from "../functionalities/show_all_projects";
 export default function addClickToNav() {
   const navItems = document.querySelectorAll(".list-group-item");

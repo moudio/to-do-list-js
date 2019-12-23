@@ -1,2 +1,3 @@
-export default function newproject(name){
+export default function newproject(name, project_tasks = []){
+    return {name, project_tasks};
 }
