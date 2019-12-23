@@ -1,4 +1,4 @@
-import alert from './alert';
+import alert from '../html_components/alert';
 export default function completeTask(taskTitle) {
   const tasks = JSON.parse(localStorage.getItem("tasks"));
   let completed_tasks;
@@ -10,8 +10,6 @@ export default function completeTask(taskTitle) {
       tasks.splice(i, 1);
         localStorage.setItem('tasks', JSON.stringify(tasks));
         location.reload();
-        alert("Task Removed sucessfully");
-
     }
 }
   }

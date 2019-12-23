@@ -1,4 +1,4 @@
-import newTask from './factories/newtask'
+import newTask from '../factories/newtask'
 
 export default function createTask(e){
     e.preventDefault();
@@ -14,9 +14,7 @@ if(!localStorage.getItem('tasks')){
 } else {
 
     tasks = JSON.parse(localStorage.getItem('tasks'));
-    console.log(tasks);
 }
-console.log(tasks)
 tasks.push(task); 
 localStorage.setItem('tasks', JSON.stringify(tasks));
 

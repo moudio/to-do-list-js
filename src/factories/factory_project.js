@@ -1,3 +1,2 @@
-export default function newproject(name, description){
-    return {name, description}
+export default function newproject(name){
 }

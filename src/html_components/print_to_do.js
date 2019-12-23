@@ -1,4 +1,5 @@
-import createTask from '../create_task';
+import createTask from '../functionalities/create_task';
+import {format, formatDistance } from 'date-fns';
 export default function printToDoForm() {
   const title = document.createElement('h1');
   title.textContent = 'Add A New Task';
@@ -25,19 +26,27 @@ export default function printToDoForm() {
 
       <div class="form-group">
         <p><b>Priority</b></p>
-        <input type="radio" id="lowPriorty" name="priority" value="Low" />
+        <input type="radio" id="lowPriorty" name="priority" value="low" checked />
         <label for="lowPriorty">Low</label>
-        <input type="radio" id="highPriority" name="priority" value="High" />
+
+        <input type="radio" id="mediumPriority" name="priority" value="medium" />
+        <label for="mediumPriority">Medium</label>
+
+        <input type="radio" id="highPriority" name="priority" value="high" />
         <label for="highPriority">High</label>
+
       </div>
+
 
       <button type="submit" class="btn btn-primary">Create Task</button>
     </form>
     
+  <p> </p>
+
     `
     appContainer.prepend(title);
     document.querySelector('form').addEventListener('submit', createTask );
 
-}
+  }
 
 
