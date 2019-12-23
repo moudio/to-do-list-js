@@ -1,4 +1,4 @@
-import createTask from '../factories/newtask';
+import createTask from '../create_task';
 export default function printToDoForm() {
   const title = document.createElement('h1');
   title.textContent = 'Add A New Task';
@@ -9,18 +9,18 @@ export default function printToDoForm() {
     <form>
       <div class="form-group">
         <label for="taskTitle">Task Name</label>
-        <input type="text" class="form-control" id="taskTitle" placeholder="Enter Task Name" />
+        <input type="text" class="form-control" id="taskTitle" placeholder="Enter Task Name" required/>
       </div>
 
       <div class="form-group">
         <label for="taskDescription">Description</label>
-        <textarea class="form-control rounded-0" id="taskDescription" rows="5"></textarea>
+        <textarea class="form-control rounded-0" id="taskDescription" rows="5" required></textarea>
       </div>
 
       <div class="form-group">
         <!-- Date input -->
         <label class="control-label" for="date">Date</label>
-        <input class="form-control" id="taskDue" name="date"  type="date" />
+        <input class="form-control" id="taskDue" name="date"  type="date" require />
       </div>
 
       <div class="form-group">
