@@ -3,10 +3,7 @@ export default function printToDoForm() {
   const title = document.createElement('h1');
   title.textContent = 'Add A New Task';
   title.classList.add('text-center');
-    const body = document.querySelector('body'); 
-
-    const appContainer = document.createElement('div')
-    appContainer.classList.add('container', 'app-container');
+    const appContainer = document.querySelector('.app'); 
   
     appContainer.innerHTML = `
     <form>
@@ -38,8 +35,7 @@ export default function printToDoForm() {
     </form>
     
     `
-    body.appendChild(title);
-    body.appendChild(appContainer);
+    appContainer.prepend(title);
     document.querySelector('form').addEventListener('submit', createTask );
 
 }

@@ -1,12 +1,10 @@
 import createProject from '../create_project'
 export default function printProject(){
     const title = document.createElement('h1');
-title.textContent = 'Create A New Project';
-title.classList.add('text-center');
-  const body = document.querySelector('body'); 
+  title.textContent = 'Create A New Project';
+  title.classList.add('text-center');
+  const appContainer = document.querySelector('.app'); 
 
-  const appContainer = document.createElement('div')
-  appContainer.classList.add('container', 'app-container');
   appContainer.innerHTML = `
   <form>
       <div class="form-group">
@@ -25,7 +23,6 @@ title.classList.add('text-center');
     </form>
     
   `
-  body.appendChild(title);
-  body.appendChild(appContainer);
+  appContainer.prepend(title);
   document.querySelector('form').addEventListener('submit', createProject );
 }

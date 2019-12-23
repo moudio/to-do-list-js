@@ -25,7 +25,7 @@ nav.innerHTML = `<nav class="navbar navbar-expand-lg navbar-light bg-light">
 
       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
         <a class="dropdown-item" href="#">New Project</a>
-        <a class="dropdown-item" href="#">All Your Projects </a>
+        <a class="dropdown-item" href="#">All Your Projects</a>
         <div class="dropdown-divider"></div>
         <a class="dropdown-item" href="#">Something else here</a>
       </div>
@@ -35,8 +35,7 @@ nav.innerHTML = `<nav class="navbar navbar-expand-lg navbar-light bg-light">
 </div>
 </nav>`
 
-body.appendChild(nav);
+body.prepend(nav);
 addEventToNav();
-
 
 }
