@@ -1,5 +1,5 @@
 import storeTaskToProject from './add_task_to_project';
-import createTask from './create_task'
+import createTaskFromProject from './create_task_from_project'
 import showAllTasksOfAProject from './show_all_tasks_of_a_project';
 export default function taskFormForProject(){
     showAllTasksOfAProject();
@@ -46,8 +46,7 @@ form.innerHTML = `
 const addContainer = document.querySelector('.app');
 addContainer.appendChild(form);
 document.querySelector('.add-task').style.display = "none";
-
-document.querySelector('form').addEventListener('submit', createTask );
+document.querySelector('form').addEventListener('submit', createTaskFromProject );
 document.querySelector('form').addEventListener('submit', storeTaskToProject);
 
 

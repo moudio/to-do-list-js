@@ -4,7 +4,6 @@ export default function printProject() {
   title.textContent = "Create A New Project";
   title.classList.add("text-center");
   const appContainer = document.querySelector(".app");
-
   appContainer.innerHTML = `
   <form>
       <div class="form-group">
@@ -16,6 +15,9 @@ export default function printProject() {
     </form>
     
   `;
+
   appContainer.prepend(title);
+  console.log(appContainer);
+
   document.querySelector("form").addEventListener("submit", createProject);
 }

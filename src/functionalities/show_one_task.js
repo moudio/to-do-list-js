@@ -1,4 +1,4 @@
-import {formatRelative, subDays } from 'date-fns'
+import { formatDistanceToNow } from 'date-fns'
 import showAllProjects from './show_all_projects';
 
 export default function showTask(taskTitle) {
@@ -19,7 +19,7 @@ export default function showTask(taskTitle) {
           <h5 class="card-title"> Details for task: ${task_item.name}</h5>
           <p class="card-text">Description: ${task_item.description}</p>
           <p class="card-text">Priority: ${task_item.priority}</p>
-          <p class="card-text">Due date: ${formatRelative(subDays(new Date(), 3), new Date())}</p>
+          <p class="card-text">Due date: ${formatDistanceToNow(new Date(task_item.date))} from now</p>
           <a href="#" class="btn btn-primary go-back">Go Back</a>
         </div>
       </div>

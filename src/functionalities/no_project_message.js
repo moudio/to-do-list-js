@@ -11,9 +11,10 @@ export default function noProjectMessage(){
     addProjectButton.classList.add('btn', 'btn-success', 'add-project-button') 
     addProjectButton.textContent = "Add New Project";
     appContainer.appendChild(addProjectButton);
+    const button = document.querySelector('.add-project-button');
 
-    addProjectButton.addEventListener('click', function(){
-            showProjectForm();
+    button.addEventListener('click', function(){
+        showProjectForm();
     })
 
 }

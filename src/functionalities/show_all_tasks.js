@@ -6,6 +6,7 @@ function showAllTasks() {
   const h1 = document.createElement("h1");
   const wrapper = document.querySelector("#page-content-wrapper");
   let appContainer;
+
   if(!document.querySelector('.app')){
     appContainer = document.createElement("div");
   } else {
@@ -18,7 +19,8 @@ function showAllTasks() {
   h1.classList.add("text-center");
   appContainer.prepend(h1);
 
-  if (tasks.length > 2) {
+
+  if (tasks) {
     tasks = JSON.parse(tasks);
     for (let task of tasks) {
       const taskDiv = document.createElement("div");
@@ -44,17 +46,23 @@ function showAllTasks() {
       wrapper.appendChild(appContainer);
     }
   
-
+    const appCont = document.querySelector('.app');
+if(appCont){
   document.querySelector(".app").addEventListener("click", function(e) {
+    if(e.target.parentElement.firstChild.textContent){
     const taskTitle = e.target.parentElement.firstChild.textContent;
     if (e.target.classList.contains("complete")) {
       completeTask(taskTitle);
     } else if (e.target.classList.contains("see-more-button")) {
       showThatTask(taskTitle);
     }
-  
+    }
   });
-} else {
+
+}
+}
+ else {
+   console.log("no")
 h1.textContent = "No tasks from now, add new ones";
 const addTaskButton = document.createElement('button'); 
 addTaskButton.classList.add('btn', 'btn-success', 'add-new-task', 'text-center'); 
@@ -68,6 +76,7 @@ addTaskButton.addEventListener('click', function(){
 
 })
 }
+  
 }
 
 export default showAllTasks;

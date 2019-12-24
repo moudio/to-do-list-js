@@ -10,7 +10,6 @@ title.classList.add('text-center')
 
 if(!localStorage.getItem('projects')){
 noProjectMessage();
-
 } else {
 const projects = JSON.parse(localStorage.getItem('projects'));
 appContainer.innerHTML = '';

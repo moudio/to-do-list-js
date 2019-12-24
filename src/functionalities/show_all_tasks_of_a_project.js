@@ -1,4 +1,3 @@
-import completeTask from "./complete_task";
 import showThatTask from './show_one_task';
 import removeFromProject from './remove_task_from_project';
 export default function showAllTasksOfAProject() {
@@ -28,19 +27,24 @@ export default function showAllTasksOfAProject() {
     divForProjects.appendChild(projectDiv);
 }
 
-document.querySelector(".app").addEventListener("click", function(e) {
-  const taskTitle = e.target.parentElement.firstChild.innerHTML;
+const projectContainer = document.querySelector(".project")
+if (projectContainer){
+  projectContainer.addEventListener("click", function(e) {
+  if(e.target.parentElement.firstChild.innerHTML){
+    const taskTitle = e.target.parentElement.firstChild.innerHTML
+  
   
   if (e.target.classList.contains("complete-task")) {
 
       const projectName = document.querySelector('h1').textContent;
-
       removeFromProject(projectName, taskTitle);
-      completeTask(taskTitle, false);
 
     } else if (e.target.classList.contains("see-more-button")) {
 
       showThatTask(taskTitle);
     }
+  }
   });
+}
+
 }

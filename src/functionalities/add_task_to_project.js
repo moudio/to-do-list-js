@@ -1,4 +1,6 @@
 import newTask from '../factories/newtask'
+import showProject from './show_one_project';
+
 export default function add_task_to_project() {
     const projectName = document.querySelector('h1').innerHTML;
     const taskTitle = document.getElementById('taskTitle').value;
@@ -12,6 +14,7 @@ export default function add_task_to_project() {
         project.project_tasks.push(task)
     
     localStorage.setItem('projects', JSON.stringify(projects));
+showProject(projectName);
     
 }
     
