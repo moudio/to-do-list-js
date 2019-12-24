@@ -1,8 +1,7 @@
 export default function printSideBar(){
-    const wrapper = document.querySelector('#wrapper');
+    const wrapper = document.querySelector('.wrapper');
     const sidebar = document.createElement("div"); 
-    sidebar.classList.add('bg', 'bg-light', 'border-right');
-    sidebar.id = 'sidebar-wrapper';
+    sidebar.classList.add('bg', 'bg-light', 'border-right', 'sidebar-wrapper');
     sidebar.innerHTML = `
     <div class="sidebar-heading">To Do Go </div>
     <div class="list-group list-group-flush">

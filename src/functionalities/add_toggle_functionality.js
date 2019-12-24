@@ -4,7 +4,7 @@ export default function toggleSidebar() {
      e.preventDefault(); 
     
      
-    const wrapper = document.querySelector("#wrapper"); 
+    const wrapper = document.querySelector(".wrapper"); 
 
         if(wrapper.classList.contains("toggled")){
             wrapper.classList.remove("toggled");

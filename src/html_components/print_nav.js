@@ -30,7 +30,7 @@ export default function printNav() {
 </div>
   `
   content_wrapper.appendChild(nav);
-  const appWrapper = document.querySelector("#wrapper")
+  const appWrapper = document.querySelector(".wrapper")
   appWrapper.appendChild(content_wrapper);
 
 
