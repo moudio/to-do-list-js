@@ -1,16 +1,24 @@
-import alert from '../html_components/alert';
-export default function completeTask(taskTitle) {
+import message from '../html_components/alert';
+import showAllTasks from '../functionalities/show_all_tasks'
+export default function completeTask(taskTitle, notice = true) {
   const tasks = JSON.parse(localStorage.getItem("tasks"));
-  let completed_tasks;
-  let task_item;
-  console.log(tasks);
+
   for(let i = 0 ; i< tasks.length; i++){
       if (tasks[i].name === taskTitle){
+        if(notice){
           if(confirm("want to remove the task?")){
       tasks.splice(i, 1);
+      
         localStorage.setItem('tasks', JSON.stringify(tasks));
-        location.reload();
+        message('Task Removed Successfully')
     }
+} else {
+  tasks.splice(i, 1);
+      
+  localStorage.setItem('tasks', JSON.stringify(tasks));
 }
+showAllTasks();
+
   }
+}
 }

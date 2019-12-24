@@ -1,11 +1,15 @@
 import showProject from "../functionalities/show_one_project";
-
+import removeProject from '../functionalities/remove_project';
 export function addEventToProjectButtons () {
-   const projects =  document.querySelectorAll('.view-project');
-   for(let project of projects) {
-    project.addEventListener('click', function(e){
-       const project_name = e.target.previousSibling.innerHTML;
-        showProject(project_name);
+   const projects =  document.querySelector('.app');
+
+      projects.addEventListener('click', function(e){
+         const project_name = e.target.parentElement.firstChild.innerHTML;
+        if(e.target.classList.contains('view-project')){
+           showProject(project_name);
+        } else if (e.target.classList.contains('remove-project')){
+           removeProject(project_name);
+        }
     })
-   }
+   
 }

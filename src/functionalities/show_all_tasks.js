@@ -1,6 +1,6 @@
 import showThatTask from "./show_one_task";
-import removeTask from "./complete_task";
 import completeTask from "./complete_task";
+import printToDoForm from "../html_components/print_to_do";
 function showAllTasks() {
   let tasks = localStorage.getItem("tasks");
   const h1 = document.createElement("h1");
@@ -17,12 +17,14 @@ function showAllTasks() {
   h1.textContent = "Welcome! Here are your tasks";
   h1.classList.add("text-center");
   appContainer.prepend(h1);
-  if (tasks) {
+
+  if (tasks.length > 2) {
     tasks = JSON.parse(tasks);
     for (let task of tasks) {
       const taskDiv = document.createElement("div");
       taskDiv.classList.add("task", `${task.priority.toLowerCase()}`);
       const taskName = document.createElement("p");
+      taskName.classList.add('task-name')
       const dueDate = document.createElement("p");
       dueDate.textContent = ` Due: ${task.date}`;
       taskName.textContent = task.name;
@@ -41,7 +43,7 @@ function showAllTasks() {
       appContainer.appendChild(taskDiv);
       wrapper.appendChild(appContainer);
     }
-  }
+  
 
   document.querySelector(".app").addEventListener("click", function(e) {
     const taskTitle = e.target.parentElement.firstChild.textContent;
@@ -50,7 +52,22 @@ function showAllTasks() {
     } else if (e.target.classList.contains("see-more-button")) {
       showThatTask(taskTitle);
     }
+  
   });
+} else {
+h1.textContent = "No tasks from now, add new ones";
+const addTaskButton = document.createElement('button'); 
+addTaskButton.classList.add('btn', 'btn-success', 'add-new-task', 'text-center'); 
+addTaskButton.textContent = "Add a new task"
+appContainer.appendChild(h1); 
+appContainer.appendChild(addTaskButton);
+wrapper.appendChild(appContainer);
+
+addTaskButton.addEventListener('click', function(){
+  printToDoForm()
+
+})
+}
 }
 
 export default showAllTasks;

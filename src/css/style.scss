@@ -29,6 +29,9 @@
 }
 
 
+.task-name {
+    width: 30%;
+}
 
 .project {
     display: flex;
@@ -39,4 +42,9 @@
 .add-task:hover {
 color: red; 
 cursor: pointer;
+}
+
+.add-new-task {
+    margin: 0 auto;
+    display: block;
 }

@@ -1,6 +1,8 @@
 import storeTaskToProject from './add_task_to_project';
 import createTask from './create_task'
+import showAllTasksOfAProject from './show_all_tasks_of_a_project';
 export default function taskFormForProject(){
+    showAllTasksOfAProject();
     const createTask = document.querySelector('.add-task');
     createTask.addEventListener('click', showForm);
 }

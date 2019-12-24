@@ -13,6 +13,7 @@ function projectUI(project) {
     appContent.innerHTML = '';
     appContent.appendChild(title);
     const addTask = document.createElement('div');
+    addTask.classList.add('add-task')
 
     addTask.innerHTML = `<hr>
     <span class="add-task" > <i class="fas fa-plus"></i>  Add Task </span>`

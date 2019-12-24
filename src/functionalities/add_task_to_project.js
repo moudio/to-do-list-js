@@ -7,14 +7,8 @@ export default function add_task_to_project() {
     const taskPriority = taskRadioPriority();
     const task = newTask(taskTitle, taskDescription, taskDue, taskPriority); 
     let projects; 
-    
-   
-    
         projects = JSON.parse(localStorage.getItem('projects'));
-        console.log(taskTitle)
         const project = projects.find( project => project.name === projectName);
-        console.log(projects); 
-        console.log(project)
         project.project_tasks.push(task)
     
     localStorage.setItem('projects', JSON.stringify(projects));
