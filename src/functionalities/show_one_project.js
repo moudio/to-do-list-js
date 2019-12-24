@@ -9,7 +9,7 @@ projectUI(project);
 function projectUI(project) {
     const appContent = document.querySelector('.app'); 
     const title = document.createElement('h1'); 
-    title.textContent = `${project.name}`; 
+    title.innerHTML = `${project.name}`; 
     appContent.innerHTML = '';
     appContent.appendChild(title);
     const addTask = document.createElement('div');

@@ -10,8 +10,6 @@ export default function printSideBar(){
       <a href="#" class="list-group-item list-group-item-action bg-light">Create Task</a>
       <a href="#" class="list-group-item list-group-item-action bg-light">Create Project</a>
       <a href="#" class="list-group-item list-group-item-action bg-light">All Projects</a>
-      <a href="#" class="list-group-item list-group-item-action bg-light"> <i class="fa fa-clock" aria-hidden="true"></i> Today</a>
-      <a href="#" class="list-group-item list-group-item-action bg-light"> <i class="fa fa-calendar" aria-hidden="true"></i> This Week</a>
 
 
   </div>`

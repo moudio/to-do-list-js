@@ -29,7 +29,8 @@
 }
 
 
-.task-name {
+.task-name, 
+.project-name {
     width: 30%;
 }
 
@@ -44,7 +45,12 @@ color: red;
 cursor: pointer;
 }
 
-.add-new-task {
+.add-new-task, 
+.add-project-button {
     margin: 0 auto;
     display: block;
+}
+
+.fa-pen {
+    font-size: 20px;
 }

@@ -19,6 +19,6 @@ export default function createProject(e) {
     alert('Project Created Sucessfully');
     showProject(projectName.value);
     projectName.value = '';
-;
+
 
 }

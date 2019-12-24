@@ -1,17 +1,15 @@
 import {formatRelative, subDays } from 'date-fns'
+import showAllProjects from './show_all_projects';
 
 export default function showTask(taskTitle) {
     let task_item;
     const tasks = JSON.parse(localStorage.getItem('tasks'));
-    console.log(tasks)
     for(let task of tasks){
         if (task.name === taskTitle){
             task_item = task;
             break;
         }
     }
-    console.log(task_item)
-
     
     const appContainer = document.querySelector('.app');
     appContainer.innerHTML = `<div class="row">
@@ -22,8 +20,16 @@ export default function showTask(taskTitle) {
           <p class="card-text">Description: ${task_item.description}</p>
           <p class="card-text">Priority: ${task_item.priority}</p>
           <p class="card-text">Due date: ${formatRelative(subDays(new Date(), 3), new Date())}</p>
-          <a href="#" class="btn btn-primary">Go back</a>
+          <a href="#" class="btn btn-primary go-back">Go Back</a>
         </div>
       </div>
     </div> `
+
+    const goBack = document.querySelector('.go-back'); 
+    goBack.addEventListener('click', function(){
+      showAllProjects();
+    })
+ 
 }
+
+

@@ -29,13 +29,17 @@ export default function showAllTasksOfAProject() {
 }
 
 document.querySelector(".app").addEventListener("click", function(e) {
-    const taskTitle = e.target.parentElement.firstChild.innerHTML;
-    const projectName = document.querySelector('h1').textContent;
-    if (e.target.classList.contains("complete-task")) {
+  const taskTitle = e.target.parentElement.firstChild.innerHTML;
+  
+  if (e.target.classList.contains("complete-task")) {
+
+      const projectName = document.querySelector('h1').textContent;
+
       removeFromProject(projectName, taskTitle);
       completeTask(taskTitle, false);
 
     } else if (e.target.classList.contains("see-more-button")) {
+
       showThatTask(taskTitle);
     }
   });

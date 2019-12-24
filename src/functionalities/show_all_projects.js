@@ -1,15 +1,20 @@
 import { addEventToProjectButtons } from "../events/add_event_to_project";
+import noProjectMessage from "./no_project_message";
 
 export default function showAllProjects() {
     const appContainer = document.querySelector('.app');
+    appContainer.innerHTML = ''
+    const title = document.createElement('h1'); 
+title.innerHTML = 'All Your Projects';
+title.classList.add('text-center')
+
 if(!localStorage.getItem('projects')){
-    alert('No projects from now')
+noProjectMessage();
+
 } else {
 const projects = JSON.parse(localStorage.getItem('projects'));
 appContainer.innerHTML = '';
-const title = document.createElement('h1'); 
-title.innerHTML = 'All Your Projects';
-title.classList.add('text-center')
+
 for(let project of projects){
     const projectDiv = document.createElement('div');
     projectDiv.classList.add('project');

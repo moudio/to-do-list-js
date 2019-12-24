@@ -1,5 +1,4 @@
 import createTask from '../functionalities/create_task';
-import {format, formatDistance } from 'date-fns';
 export default function printToDoForm() {
   const title = document.createElement('h1');
   title.textContent = 'Add A New Task';

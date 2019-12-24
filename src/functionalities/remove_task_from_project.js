@@ -1,7 +1,5 @@
 export default function removeTaskFromProject(projectName, taskName) {
     const projects = JSON.parse(localStorage.getItem("projects"));
-    console.log(projects); 
-    console.log(taskName);
     const project = projects.find( element => element.name == projectName);
     for(let i = 0 ; i < project.project_tasks.length; i++){
         if (project.project_tasks[i].name === taskName){
