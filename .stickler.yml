@@ -10,8 +10,3 @@ files:
         - 'src/generated/*'
         - 'webroot/bower_components/*'
         - 'node_modules/*'
-  csslint: {  }
-files:
-  ignore:
-    - 'bower_components/*'
-    - 'node_modules/*'
