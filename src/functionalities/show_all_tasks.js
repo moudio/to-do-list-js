@@ -4,7 +4,7 @@ import printToDoForm from "../html_components/print_to_do";
 function showAllTasks() {
   let tasks = localStorage.getItem("tasks");
   const h1 = document.createElement("h1");
-  const wrapper = document.querySelector("#page-content-wrapper");
+  const wrapper = document.querySelector(".page-content-wrapper");
   let appContainer;
 
   if(!document.querySelector('.app')){

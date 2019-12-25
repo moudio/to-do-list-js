@@ -16,7 +16,7 @@ body {
 .sidebar-wrapper .list-group {
 	width: 15rem;
 }
-#page-content-wrapper {
+.page-content-wrapper {
 	min-width: 100vw;
 }
 .wrapper.toggled .sidebar-wrapper {
@@ -26,7 +26,7 @@ body {
 	.sidebar-wrapper {
 		margin-left: 0;
 	}
-	#page-content-wrapper {
+	.page-content-wrapper {
 		min-width: 0;
 		width: 100%;
 	}

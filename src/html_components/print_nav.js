@@ -2,7 +2,7 @@ import addEventToNav from "../events/add_nav_events";
 import toggleSidebar from "./../functionalities/add_toggle_functionality";
 export default function printNav() {
   const content_wrapper = document.createElement("div"); 
-  content_wrapper.id = "page-content-wrapper"; 
+  content_wrapper.classList.add( "page-content-wrapper"); 
   
   const nav = document.createElement("nav");
 
