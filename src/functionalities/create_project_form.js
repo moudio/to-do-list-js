@@ -1,9 +1,10 @@
-import createProject from "./create_project";
+import createProject from './create_project';
+
 export default function printProject() {
-  const title = document.createElement("h1");
-  title.textContent = "Create A New Project";
-  title.classList.add("text-center");
-  const appContainer = document.querySelector(".app");
+  const title = document.createElement('h1');
+  title.textContent = 'Create A New Project';
+  title.classList.add('text-center');
+  const appContainer = document.querySelector('.app');
   appContainer.innerHTML = `
   <form>
       <div class="form-group">
@@ -17,7 +18,6 @@ export default function printProject() {
   `;
 
   appContainer.prepend(title);
-  console.log(appContainer);
 
-  document.querySelector("form").addEventListener("submit", createProject);
+  document.querySelector('form').addEventListener('submit', createProject);
 }

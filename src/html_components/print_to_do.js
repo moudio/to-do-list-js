@@ -1,11 +1,12 @@
 import createTask from '../functionalities/create_task';
+
 export default function printToDoForm() {
   const title = document.createElement('h1');
   title.textContent = 'Add A New Task';
   title.classList.add('text-center');
-    const appContainer = document.querySelector('.app'); 
-  
-    appContainer.innerHTML = `
+  const appContainer = document.querySelector('.app');
+
+  appContainer.innerHTML = `
     <form>
       <div class="form-group">
         <label for="taskTitle">Task Name</label>
@@ -42,10 +43,7 @@ export default function printToDoForm() {
     
   <p> </p>
 
-    `
-    appContainer.prepend(title);
-    document.querySelector('form').addEventListener('submit', createTask );
-
-  }
-
-
+    `;
+  appContainer.prepend(title);
+  document.querySelector('form').addEventListener('submit', createTask);
+}

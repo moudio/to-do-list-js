@@ -1,15 +1,16 @@
 import storeTaskToProject from './add_task_to_project';
-import createTaskFromProject from './create_task_from_project'
+import createTaskFromProject from './create_task_from_project';
 import showAllTasksOfAProject from './show_all_tasks_of_a_project';
-export default function taskFormForProject(){
-    showAllTasksOfAProject();
-    const createTask = document.querySelector('.add-task');
-    createTask.addEventListener('click', showForm);
+
+export default function taskFormForProject() {
+  showAllTasksOfAProject();
+  const createTask = document.querySelector('.add-task');
+  createTask.addEventListener('click', showForm);
 }
 
 function showForm() {
-const form = document.createElement('form');
-form.innerHTML = `
+  const form = document.createElement('form');
+  form.innerHTML = `
 <div class="form-group">
   <label for="taskTitle">Task Name</label>
   <input type="text" class="form-control" id="taskTitle" placeholder="Enter Task Name" required/>
@@ -42,12 +43,10 @@ form.innerHTML = `
 
 <button type="submit" class="btn btn-primary">Create Task</button>
 
-`
-const addContainer = document.querySelector('.app');
-addContainer.appendChild(form);
-document.querySelector('.add-task').style.display = "none";
-document.querySelector('form').addEventListener('submit', createTaskFromProject );
-document.querySelector('form').addEventListener('submit', storeTaskToProject);
-
-
+`;
+  const addContainer = document.querySelector('.app');
+  addContainer.appendChild(form);
+  document.querySelector('.add-task').style.display = 'none';
+  document.querySelector('form').addEventListener('submit', createTaskFromProject);
+  document.querySelector('form').addEventListener('submit', storeTaskToProject);
 }

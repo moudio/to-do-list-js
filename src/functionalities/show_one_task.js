@@ -1,18 +1,18 @@
-import { formatDistanceToNow } from 'date-fns'
+import { formatDistanceToNow } from 'date-fns';
 import showAllProjects from './show_all_projects';
 
 export default function showTask(taskTitle) {
-    let task_item;
-    const tasks = JSON.parse(localStorage.getItem('tasks'));
-    for(let task of tasks){
-        if (task.name === taskTitle){
-            task_item = task;
-            break;
-        }
+  let task_item;
+  const tasks = JSON.parse(localStorage.getItem('tasks'));
+  for (const task of tasks) {
+    if (task.name === taskTitle) {
+      task_item = task;
+      break;
     }
-    
-    const appContainer = document.querySelector('.app');
-    appContainer.innerHTML = `<div class="row">
+  }
+
+  const appContainer = document.querySelector('.app');
+  appContainer.innerHTML = `<div class="row">
     <div class="col-sm-6">
       <div class="card">
         <div class="card-body">
@@ -23,13 +23,10 @@ export default function showTask(taskTitle) {
           <a href="#" class="btn btn-primary go-back">Go Back</a>
         </div>
       </div>
-    </div> `
+    </div> `;
 
-    const goBack = document.querySelector('.go-back'); 
-    goBack.addEventListener('click', function(){
-      showAllProjects();
-    })
- 
+  const goBack = document.querySelector('.go-back');
+  goBack.addEventListener('click', () => {
+    showAllProjects();
+  });
 }
-
-
