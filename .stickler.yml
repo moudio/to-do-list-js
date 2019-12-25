@@ -1,6 +1,9 @@
 linters:
     eslint:
-        config: './eslintrc.yml'
+        config: './.eslintrc.yml'
+
+fixers:
+    enable: true
 
 files:
     ignore:
