@@ -18,7 +18,6 @@ export default function createDefaultProject(task) {
             defaultProject = project 
         }
         }
-        console.log(defaultProject);
     }
   
     defaultProject['project_tasks'].push(task)
