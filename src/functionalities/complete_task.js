@@ -1,6 +1,7 @@
 
 import message from '../html_components/alert';
 import showAllTasks from './show_all_tasks';
+import removeTaskFromDefaultProject from './remove_task_from_default_project';
 
 export default function completeTask(taskTitle) {
   const tasks = JSON.parse(localStorage.getItem('tasks'));
@@ -14,11 +15,13 @@ export default function completeTask(taskTitle) {
         } else {
           localStorage.setItem('tasks', JSON.stringify(tasks));
         }
-        message('Task Removed Successfully');
       }
     }
-
-
-    showAllTasks();
+     
   }
+  removeTaskFromDefaultProject(taskTitle);
+  message('Task Removed Successfully');
+  showAllTasks();
+
+
 }

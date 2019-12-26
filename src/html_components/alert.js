@@ -7,5 +7,14 @@ export default function alert(message) {
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>`;
+
   nav.after(alertDiv);
+
+  disappear();
 }
+
+function disappear(){
+  setTimeout(function(){
+    document.querySelector('.alert').style.display = 'none'}, 3000)
+  }
+
