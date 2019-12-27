@@ -1,13 +1,14 @@
 import newTask from '../factories/newtask';
 import notice from '../html_components/alert';
 
-export default function createTask(e) {
+export default function createTaskFromProject(e) {
   e.preventDefault();
   const taskTitle = document.getElementById('taskTitle').value;
   const taskDescription = document.getElementById('taskDescription').value;
   const taskDue = document.getElementById('taskDue').value;
   const taskPriority = taskRadioPriority();
-  const task = newTask(taskTitle, taskDescription, taskDue, taskPriority);
+  const projectName = document.querySelector('h1').textContent;
+  const task = newTask(taskTitle, taskDescription, taskDue, taskPriority, projectName );
   let tasks;
 
   if (!localStorage.getItem('tasks')) {
@@ -15,9 +16,10 @@ export default function createTask(e) {
   } else {
     tasks = JSON.parse(localStorage.getItem('tasks'));
   }
+  
   tasks.push(task);
   localStorage.setItem('tasks', JSON.stringify(tasks));
-  notice('Task Created Successfully');
+  notice("Task created successfully")
 }
 
 

@@ -1,11 +1,10 @@
-import showThatTask from './show_one_task';
-import removeFromProject from './remove_task_from_project';
-
+import addEventsToAllTasksOfProject from './../events/add_events_to_all_tasks_of_project'
 export default function showAllTasksOfAProject() {
   const projectName = document.querySelector('h1');
   const projects = JSON.parse(localStorage.getItem('projects'));
   const project = projects.find((project) => project.name === projectName.textContent);
   const divForProjects = document.createElement('div');
+  divForProjects.classList.add('projects')
   const addTaskDiv = document.querySelector('.add-task');
 
   addTaskDiv.insertAdjacentElement('beforebegin', divForProjects);
@@ -28,20 +27,6 @@ export default function showAllTasksOfAProject() {
     divForProjects.appendChild(projectDiv);
   }
 
-  const projectContainer = document.querySelector('.project');
-  if (projectContainer) {
-    projectContainer.addEventListener('click', (e) => {
-      if (e.target.parentElement.firstChild.innerHTML) {
-        const taskTitle = e.target.parentElement.firstChild.innerHTML;
-
-
-        if (e.target.classList.contains('complete-task')) {
-          const projectName = document.querySelector('h1').textContent;
-          removeFromProject(projectName, taskTitle);
-        } else if (e.target.classList.contains('see-more-button')) {
-          showThatTask(taskTitle);
-        }
-      }
-    });
-  }
+addEventsToAllTasksOfProject();
 }
+

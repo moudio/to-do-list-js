@@ -1,6 +1,5 @@
-import showThatTask from './show_one_task';
-import completeTask from './complete_task';
 import printToDoForm from '../html_components/print_to_do';
+import addEventsAfterPrintingAllTasks from '../events/add_events_after_printing_all_tasks'
 
 function showAllTasks() {
   let tasks = localStorage.getItem('tasks');
@@ -49,16 +48,7 @@ function showAllTasks() {
 
     const appCont = document.querySelector('.app');
     if (appCont) {
-      document.querySelector('.app').addEventListener('click', (e) => {
-        if (e.target.parentElement.firstChild.textContent) {
-          const taskTitle = e.target.parentElement.firstChild.textContent;
-          if (e.target.classList.contains('complete')) {
-            completeTask(taskTitle);
-          } else if (e.target.classList.contains('see-more-button')) {
-            showThatTask(taskTitle);
-          }
-        }
-      });
+     addEventsAfterPrintingAllTasks() 
     }
   } else {
     h1.textContent = 'No tasks from now, add new ones';

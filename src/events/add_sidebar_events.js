@@ -3,8 +3,9 @@ import showAllTasks from '../functionalities/show_all_tasks';
 import showProjectForm from '../functionalities/create_project_form';
 import showAllProjects from '../functionalities/show_all_projects';
 
-export default function addClickToNav() {
-  const navItems = document.querySelectorAll('.nav-item');
+export default function addClickEventToSidbar() {
+  const navItems = document.querySelectorAll('.list-group-item');
+  const navBrand = document.querySelector('.sidebar-heading');
   for (const li of navItems) {
     li.addEventListener('click', (e) => {
       switch (e.target.textContent) {
@@ -20,11 +21,11 @@ export default function addClickToNav() {
         case 'All Projects':
           showAllProjects();
           break;
-          default:
-              showAllProjects();
       }
     });
 
- 
+    navBrand.addEventListener('click', () => {
+      showAllTasks();
+    });
   }
 }

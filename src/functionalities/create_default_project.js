@@ -1,7 +1,7 @@
 import newProjectFactory from './../factories/factory_project';
 import showProject from './../functionalities/show_one_project';
 import alert from '../html_components/alert';
-export default function createDefaultProject(task) {
+export default function createDefaultProject(task = null) {
     let projects;
     let defaultProject;
     if (!localStorage.getItem('projects')) {
@@ -20,9 +20,13 @@ export default function createDefaultProject(task) {
         }
     }
   
+    if(task){
     defaultProject['project_tasks'].push(task)
-    localStorage.setItem('projects', JSON.stringify(projects));
     alert('Task created successfully');
+    }
+    
+    localStorage.setItem('projects', JSON.stringify(projects));
+
 
     showProject('Default Project');
     

@@ -13,12 +13,10 @@ export default function removeProject(projectName) {
       } else {
         localStorage.setItem('projects', JSON.stringify(projects));
       }
-
+        notice("project removed successfully")
     }
   }
-  notice('Project Removed');
 
-  showAllProjects();
-
+   showAllProjects();
 
 }

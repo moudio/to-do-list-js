@@ -4,11 +4,6 @@ import showProject from './show_one_project';
 export default function removeTaskFromProject(projectName, taskName) {
   const projects = JSON.parse(localStorage.getItem('projects'));
   const project = projects.find((element) => element.name == projectName);
-  if (
-    confirm(
-      `Do you want to remove the task ${taskName} from your project ${projectName} ?`,
-    )
-  ) {
     for (let i = 0; i < project.project_tasks.length; i++) {
       if (project.project_tasks[i].name === taskName) {
         project.project_tasks.splice(i, 1);
@@ -19,10 +14,16 @@ export default function removeTaskFromProject(projectName, taskName) {
     for (let i = 0; i < tasks.length; i++) {
       if (tasks[i].name === taskName) {
         tasks.splice(i, 1);
-        localStorage.setItem('tasks', JSON.stringify(tasks));
       }
+    }
+    if(tasks.length === 0){
+      localStorage.removeItem('tasks');
+    } else {
+      localStorage.setItem('tasks', JSON.stringify(tasks));
+
     }
     notice('Task Removed Successfully');
     showProject(projectName);
-  }
+  
+  
 }

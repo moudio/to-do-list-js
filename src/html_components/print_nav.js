@@ -1,5 +1,6 @@
-import addEventToNav from '../events/add_nav_events';
+import addClickEventToSidebar from '../events/add_sidebar_events';
 import toggleSidebar from '../functionalities/add_toggle_functionality';
+import addClickEventToNav from '../events/add_nav_events'
 
 export default function printNav() {
   const content_wrapper = document.createElement('div');
@@ -17,12 +18,28 @@ export default function printNav() {
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-        <li class="nav-item active">
+        <li class="nav-item">
           <a class="nav-link" href="#" class="home-link">Home <span class="sr-only">(current)</span></a>
         </li>
+        <div class = "nav-links">
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link" href="#">All Tasks</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Create Task</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#">Create Project</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#">All Projects</a>
+        </li>
+        
+        
+        </div>
+        
   
       </ul>
     </div>
@@ -35,16 +52,8 @@ export default function printNav() {
   appWrapper.appendChild(content_wrapper);
 
 
-  //   <div class="container-fluid">
-  //     <h1 class="mt-4">Simple Sidebar</h1>
-  //     <p>The starting state of the menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will change.</p>
-  //     <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>. The top navbar is optional, and just for demonstration. Just create an element with the <code>#menu-toggle</code> ID which will toggle the menu when clicked.</p>
-  //   </div>
-  // </div>
-  // <!-- /#page-content-wrapper -->
 
-  // </div>`;
-
-  addEventToNav();
+  addClickEventToSidebar();
+  addClickEventToNav()
   toggleSidebar();
 }

@@ -55,6 +55,22 @@ cursor: pointer;
     font-size: 20px;
 }
 
+
 .project p {
     width: 30%;
+}
+
+
+.task-details-div {
+    margin: 0 auto;
+}
+
+
+.nav-links {
+    display: none;
+}
+@media only screen and (max-width: 991px){
+.nav-links {
+    display: block
+}
 }

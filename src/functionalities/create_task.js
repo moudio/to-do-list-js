@@ -8,7 +8,8 @@ export default function createTask(e) {
   const taskDescription = document.getElementById("taskDescription").value;
   const taskDue = document.getElementById("taskDue").value;
   const taskPriority = taskRadioPriority();
-  const task = newTask(taskTitle, taskDescription, taskDue, taskPriority);
+
+  const task = newTask(taskTitle, taskDescription, taskDue, taskPriority, 'Default Project');
   let tasks;
 
   const time = moment(taskDue);

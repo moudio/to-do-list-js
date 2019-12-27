@@ -14,7 +14,7 @@ export default function showAllProjects() {
     const projects = JSON.parse(localStorage.getItem('projects'));
     appContainer.innerHTML = '';
 
-    for (const project of projects) {
+    for (let i = 0 ; i < projects.length; i++) {
       const projectDiv = document.createElement('div');
       projectDiv.classList.add('project');
       const projectName = document.createElement('p');
@@ -23,14 +23,16 @@ export default function showAllProjects() {
       viewProjectButton.textContent = 'View Project';
       viewProjectButton.classList.add('btn', 'btn-warning', 'view-project');
       const removeProjectButton = document.createElement('button');
+      
       removeProjectButton.textContent = 'Delete Project';
       removeProjectButton.classList.add('btn', 'btn-danger', 'remove-project');
 
-
-      projectName.innerHTML = project.name;
+      projectName.innerHTML = projects[i].name;
       projectDiv.appendChild(projectName);
       projectDiv.appendChild(viewProjectButton);
+      if(i > 0){
       projectDiv.appendChild(removeProjectButton);
+      }
       projectDiv.classList.add('project');
 
       appContainer.appendChild(projectDiv);
