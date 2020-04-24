@@ -22,6 +22,9 @@ The user can:
 - Show All Taks and Projects
 - Show Indidual Taks Details
 
+## Live version 
+<a href="https://mouhadiouf.github.io/to-do-list-js/dist/index.html">To Do List</a>
+
 ## Developed by
 
 Mouhamadou Diouf ( <a href="https://github.com/MouhaDiouf"> @mouhad </a>)
