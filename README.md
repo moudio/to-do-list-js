@@ -1,5 +1,5 @@
 # To Do List App 
-
+> A to-do list app to help users create and manage tasks as well as projects.
 
 ## Technologies
 
@@ -7,7 +7,7 @@
 - CSS
 - JavaScript
 
-
+[!screenshot][./src/screenshot.png]
 
 ## Functionalities
 
