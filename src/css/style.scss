@@ -1,0 +1,76 @@
+@import "~bootstrap/scss/bootstrap";
+@import "./sidebar.css";
+.task {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    padding: 15px;
+    background-color: #fafafa;
+    border-left: 6px solid #7f7f84;
+    margin: 30px auto;
+    margin-bottom: 10px;
+    box-shadow: 0 5px 8px -6px rgba(0,0,0,.2);
+}
+
+.low{
+    border-color: #80D651;
+}
+
+.medium {
+    border-color: #45ABCD;
+}
+
+.high {
+    border-color: rgb(194, 38, 46);
+}
+
+.app {
+    padding: 30px 20px;
+}
+
+
+.task-name, 
+.project-name {
+    width: 30%;
+}
+
+.project {
+    display: flex;
+    justify-content: space-around;
+    margin: 10px auto;
+}
+
+.add-task:hover {
+color: red; 
+cursor: pointer;
+}
+
+.add-new-task, 
+.add-project-button {
+    margin: 0 auto;
+    display: block;
+}
+
+.fa-pen {
+    font-size: 20px;
+}
+
+
+.project p {
+    width: 30%;
+}
+
+
+.task-details-div {
+    margin: 0 auto;
+}
+
+
+.nav-links {
+    display: none;
+}
+@media only screen and (max-width: 991px){
+.nav-links {
+    display: block
+}
+}
