@@ -7,7 +7,7 @@
 - CSS
 - JavaScript
 
-![screenshot][./src/screenshot.png]
+![screenshot](./src/screenshot.png)
 
 ## Functionalities
 
